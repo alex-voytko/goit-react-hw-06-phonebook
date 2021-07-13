@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const ContactList = ({ passArray, onRemove }) => {
+const ContactList = ({ contacts, onRemove }) => {
     return (
         <>
             <ul className="contact-list">
-                {passArray.map(({ id, name, number }) => (
+                {contacts.map(({ id, name, number }) => (
                     <li key={id} id={id}>
                         <p className="text-name">{name}</p>
                         <p className="text-number">{number}</p>
@@ -23,9 +23,14 @@ const ContactList = ({ passArray, onRemove }) => {
     );
 };
 
-ContactList.propTypes = {
-    passArray: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onRemove: PropTypes.func.isRequired,
-};
-
-export default ContactList;
+// ContactList.propTypes = {
+//     contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     onRemove: PropTypes.func.isRequired,
+// };
+const mapStateToProps = state => ({
+    contacts: state.contacts.items,
+});
+const mapDispatchToProps = dispatch => ({
+    onRemove: () => null,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

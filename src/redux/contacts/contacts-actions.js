@@ -1,8 +1,11 @@
 import types from './contacts-types';
 
-const addContact = data => ({
+const addContact = (name, number, id) => ({
     type: types.ADD,
-    payload: { ...data },
+    payload: { name, number, id },
 });
-
-export default { addContact };
+const removeContact = contactId => ({
+    type: types.REMOVE,
+    payload: contactId,
+});
+export default { addContact, removeContact };

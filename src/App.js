@@ -60,17 +60,10 @@ class App extends Component {
         return (
             <>
                 <Container className="phonebook-cont" title="Phonebook">
-                    <ContactForm
-                    // onSubmit={addContact}
-                    // existingNames={getAllNames()}
-                    />
+                    <ContactForm />
                 </Container>
                 <Container className="contacts-cont" title="Contacts">
-                    {/* <Filter value={state.filter} onChange={handleFilter} />
-                    <ContactList
-                        passArray={visibleContacts}
-                        onRemove={removeContact}
-                    /> */}
+                    <ContactList />
                 </Container>
             </>
         );
