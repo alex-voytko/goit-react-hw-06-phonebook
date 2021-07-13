@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import types from './contacts-types';
 
-const items = (state = [], { type, playload }) => {
+const items = (state = [], { type, payload }) => {
     switch (type) {
         case types.ADD:
-            return [...state, playload];
+            return [...state, payload];
         default:
             return state;
     }

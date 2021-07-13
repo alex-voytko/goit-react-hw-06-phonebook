@@ -6,8 +6,8 @@ import contactsActions from '../../redux/contacts/contacts-actions';
 
 class ContactForm extends Component {
     static propTypes = {
-        onSubmit: PropTypes.func.isRequired,
-        existingNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+        // onSubmit: PropTypes.func.isRequired,
+        // existingNames: PropTypes.arrayOf(PropTypes.string).isRequired,
     };
     state = {
         name: '',
@@ -25,6 +25,7 @@ class ContactForm extends Component {
         event.preventDefault();
         const nameValue = event.currentTarget[0].defaultValue;
         this.props.onSubmit(this.state);
+        console.log(this.state);
         this.reset();
     };
     reset = () => {
@@ -70,8 +71,17 @@ class ContactForm extends Component {
         );
     }
 }
-const mapDispatchToProps = dispatch => ({
-    onSubmit: data => dispatch(contactsActions.addContact(data)),
-});
 
+// const mapStateToProps = state => {
+//     return {
+//         contacts: state.contacts.items,
+//     };
+// };
+// console.log(mapStateToProps());
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: data => dispatch(contactsActions.addContact(data)),
+    };
+};
+console.log(mapDispatchToProps());
 export default connect(null, mapDispatchToProps)(ContactForm);

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const ContactList = ({ passArray, onRemove }) => {
     return (
@@ -23,7 +24,7 @@ const ContactList = ({ passArray, onRemove }) => {
 };
 
 ContactList.propTypes = {
-    passArray: PropTypes.array.isRequired,
+    passArray: PropTypes.arrayOf(PropTypes.object).isRequired,
     onRemove: PropTypes.func.isRequired,
 };
 

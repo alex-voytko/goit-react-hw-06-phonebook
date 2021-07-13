@@ -57,15 +57,6 @@ class App extends Component {
     //     }));
     // };
     render() {
-        // const {
-        //     // state,
-        //     // handleFilter,
-        //     // addContact,
-        //     // getSearchingContacts,
-        //     // getAllNames,
-        //     // removeContact,
-        // } = this;
-
         return (
             <>
                 <Container className="phonebook-cont" title="Phonebook">

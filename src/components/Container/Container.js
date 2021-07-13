@@ -8,10 +8,14 @@ const Container = ({ className, children, title }) => (
     </div>
 );
 
+Container.defaultProps = {
+    children: null,
+};
+
 Container.propTypes = {
     className: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
 };
 
 export default Container;

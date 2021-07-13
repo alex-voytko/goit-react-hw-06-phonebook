@@ -1,4 +1,4 @@
-import types from '../contacts/contacts-types';
+import types from './contacts-types';
 
 const addContact = data => ({
     type: types.ADD,
