@@ -6,8 +6,7 @@ import contactsActions from '../../redux/contacts/contacts-actions';
 
 class ContactForm extends Component {
     static propTypes = {
-        // onSubmit: PropTypes.func.isRequired,
-        // existingNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onSubmit: PropTypes.func.isRequired,
     };
     state = {
         name: '',
@@ -72,12 +71,6 @@ class ContactForm extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         contacts: state.contacts.items,
-//     };
-// };
-// console.log(mapStateToProps());
 const mapDispatchToProps = dispatch => {
     return {
         onSubmit: data => dispatch(contactsActions.addContact(data)),

@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import initialContacts from './contacts.json';
+import React from 'react';
+// import initialContacts from './contacts.json';
 import Container from './components/Container';
 import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
+// import Filter from './components/Filter';
 import ContactList from './components/ContactList';
 import './styles/main.scss';
+import Filter from './components/Filter/Filter';
 
-class App extends Component {
-    state = {
-        // contacts: initialContacts,
-        // filter: '',
-    };
+const App = () => {
+    // state = {
+    //     // contacts: initialContacts,
+    //     // filter: '',
+    // };
     // componentDidUpdate(prebProps, prevState) {
     //     if (this.state.contacts !== prevState.contacts) {
     //         localStorage.setItem(
@@ -56,18 +57,17 @@ class App extends Component {
     //         ),
     //     }));
     // };
-    render() {
-        return (
-            <>
-                <Container className="phonebook-cont" title="Phonebook">
-                    <ContactForm />
-                </Container>
-                <Container className="contacts-cont" title="Contacts">
-                    <ContactList />
-                </Container>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <Container className="phonebook-cont" title="Phonebook">
+                <ContactForm />
+            </Container>
+            <Container className="contacts-cont" title="Contacts">
+                <Filter />
+                <ContactList />
+            </Container>
+        </>
+    );
+};
 
 export default App;
